@@ -11,7 +11,7 @@
 #include <iostream>
 
 #include "ros/ros.h"
-#include "decision_maker/vtmsg.h"
+#include "win_bridge/vtmsg.h"
 
 
 void error(const char *msg)
@@ -58,8 +58,8 @@ int main(int argc, char *argv[])
 
      ros::NodeHandle n;
 
-     decision_maker::vtmsg msg;
-     ros::Publisher winPub=n.advertise<decision_maker::vtmsg>("win_pub", 100);
+     win_bridge::vtmsg msg;
+     ros::Publisher winPub=n.advertise<win_bridge::vtmsg>("win_pub", 100);
 
      newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
      if (newsockfd < 0) error("ERROR on accept");
